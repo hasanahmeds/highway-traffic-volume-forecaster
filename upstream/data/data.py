@@ -38,3 +38,11 @@ def process_data(train, test, lags):
 
     train = np.array(train)
     test = np.array(test)
+    np.random.shuffle(train)
+
+    X_train = train[:, :-1]
+    y_train = train[:, -1]
+    X_test = test[:, :-1]
+    y_test = test[:, -1]
+
+    return X_train, y_train, X_test, y_test, scaler
