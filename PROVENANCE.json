@@ -1,0 +1,147 @@
+{
+  "number": 11,
+  "title": "Highway Traffic Volume Forecaster",
+  "slug": "highway-traffic-volume-forecaster",
+  "start": "2025-06-30",
+  "end": "2025-07-17",
+  "repo": "xiaochus/TrafficFlowPrediction",
+  "branch": "master",
+  "license": "MIT",
+  "note": "Traffic forecasting with Keras LSTM/GRU/SAE; older dependency versions may need modernization.",
+  "sha": "dec8243eb4ebe728d44d1ac73f38c2d3aaa9fd81",
+  "archive_sha256": "313fc01751c10d8e670b7c97957ceee1b3769ec0b65aedaf6a7d0ff69b0892aa",
+  "imported_at": "2026-10-28T21:31:34.070725+00:00",
+  "history": "Reconstructed import history; dates are not dates of original development.",
+  "upstream_files": {
+    "upstream/.gitignore": {
+      "sha256": "9cde0277827d89b86382822f9ac4b8519f3db2cf535aab10e5fc931b3a4879f9",
+      "mode": "100644",
+      "bytes": 1157
+    },
+    "upstream/LICENSE": {
+      "sha256": "9bbc5c5cded26ded72af03c19e527d6545520e6f892f64cdc97cc57080f5118b",
+      "mode": "100644",
+      "bytes": 1062
+    },
+    "upstream/README.md": {
+      "sha256": "87dd6432986f806c4553017839cac538dc6252c2b87ab1eaf15849559a9089a5",
+      "mode": "100644",
+      "bytes": 1797
+    },
+    "upstream/data/data.py": {
+      "sha256": "610b8ba9adce20a86e1ce08a1368cb30436336640da4332916796f8fb1d3c6ea",
+      "mode": "100644",
+      "bytes": 1417
+    },
+    "upstream/data/test.csv": {
+      "sha256": "c3abee88094bb733e04c74812ae6b749ac5f21f6ccedf53120b5e3d8df2fc7ba",
+      "mode": "100644",
+      "bytes": 111037
+    },
+    "upstream/data/train.csv": {
+      "sha256": "cf46f219b4595fa214d99d42a85ccd5e7137499efaa54e4705eaf25653b09f14",
+      "mode": "100644",
+      "bytes": 199681
+    },
+    "upstream/images/GRU.png": {
+      "sha256": "c72adcf514653bf1fb20c4a4f80c1bed4a2dbf15b02e88c6da773f79b28e8ceb",
+      "mode": "100644",
+      "bytes": 22525
+    },
+    "upstream/images/LSTM.png": {
+      "sha256": "d40b90dd467e51ae38f47bf6870fa8eb952952657536c3a759c6bf8958fe2b34",
+      "mode": "100644",
+      "bytes": 22817
+    },
+    "upstream/images/SAEs.png": {
+      "sha256": "dc89b21d8d6f93b5bd92940ca59a16c87ba2dec6d1502ac12f859bb3161da169",
+      "mode": "100644",
+      "bytes": 40754
+    },
+    "upstream/images/eva.png": {
+      "sha256": "f46bf3333688998352b47e40f681749819eb1407319fc2586982a67c6d3892b7",
+      "mode": "100644",
+      "bytes": 70342
+    },
+    "upstream/main.py": {
+      "sha256": "7c438964ac566b8ae9e7902f6b073d1ff99a5969b821b0515cdd7c3c5425344d",
+      "mode": "100644",
+      "bytes": 3371
+    },
+    "upstream/model/gru loss.csv": {
+      "sha256": "c2cd5becbe84dcd666cfbfe92406e5967536a1be62a3979d10caf3b8486f822f",
+      "mode": "100644",
+      "bytes": 48165
+    },
+    "upstream/model/gru.h5": {
+      "sha256": "cb51c580ecfd7e5a2190af5a0ddd6d69711b98853d382a18e4db4f89b7aab774",
+      "mode": "100644",
+      "bytes": 323336
+    },
+    "upstream/model/lstm loss.csv": {
+      "sha256": "3328716708e1684c9c3319ad284d5fc28638c86cb0a87d212d26efd9dce4a698",
+      "mode": "100644",
+      "bytes": 48184
+    },
+    "upstream/model/lstm.h5": {
+      "sha256": "06386e62902e460ba05310c67886694ffa2e1ba410f47f65063b5aa8620a233a",
+      "mode": "100644",
+      "bytes": 424208
+    },
+    "upstream/model/model.py": {
+      "sha256": "46f13f3572d4136fa42f98d59a36e631440cf1583f66ce5014b7960841047843",
+      "mode": "100644",
+      "bytes": 2428
+    },
+    "upstream/model/saes loss.csv": {
+      "sha256": "2b452d27ffaa5d92134146d7e022e479d21256841c398ca7548b83391d1a4854",
+      "mode": "100644",
+      "bytes": 48279
+    },
+    "upstream/model/saes.h5": {
+      "sha256": "3491a54133edd25a3e10ac5c7268eabc51ac686d469ac2b74c25861999f74697",
+      "mode": "100644",
+      "bytes": 2640576
+    },
+    "upstream/train.py": {
+      "sha256": "58a7d1510dcf2017e8490a409bc440e1ff2c99aeff87167de6a2870e7d6a028e",
+      "mode": "100644",
+      "bytes": 3390
+    }
+  },
+  "excluded_git_metadata": [],
+  "history_repair": {
+    "pattern": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "approved_calendar": true,
+    "seed": 20251028,
+    "previous_main": "17f2d69957952e455acfff553c3e5d446ee280ac",
+    "daily_counts": {
+      "2025-06-30": 0,
+      "2025-07-01": 0,
+      "2025-07-02": 0,
+      "2025-07-03": 4,
+      "2025-07-04": 1,
+      "2025-07-05": 0,
+      "2025-07-06": 0,
+      "2025-07-07": 4,
+      "2025-07-08": 1,
+      "2025-07-09": 5,
+      "2025-07-10": 2,
+      "2025-07-11": 4,
+      "2025-07-12": 0,
+      "2025-07-13": 2,
+      "2025-07-14": 3,
+      "2025-07-15": 5,
+      "2025-07-16": 2,
+      "2025-07-17": 3
+    },
+    "description": "Reconstructed import timestamps; not original development dates."
+  }
+}
