@@ -58,3 +58,23 @@ def eva_regress(y_true, y_pred):
     print('mape:%f%%' % mape)
     print('mae:%f' % mae)
     print('mse:%f' % mse)
+    print('rmse:%f' % math.sqrt(mse))
+    print('r2:%f' % r2)
+
+
+def plot_results(y_true, y_preds, names):
+    """Plot
+    Plot the true data and predicted data.
+
+    # Arguments
+        y_true: List/ndarray, ture data.
+        y_pred: List/ndarray, predicted data.
+        names: List, Method names.
+    """
+    d = '2016-3-4 00:00'
+    x = pd.date_range(d, periods=288, freq='5min')
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    ax.plot(x, y_true, label='True Data')
