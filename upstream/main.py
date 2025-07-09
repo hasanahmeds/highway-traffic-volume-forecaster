@@ -18,3 +18,23 @@ def MAPE(y_true, y_pred):
     """Mean Absolute Percentage Error
     Calculate the mape.
 
+    # Arguments
+        y_true: List/ndarray, ture data.
+        y_pred: List/ndarray, predicted data.
+    # Returns
+        mape: Double, result data for train.
+    """
+
+    y = [x for x in y_true if x > 0]
+    y_pred = [y_pred[i] for i in range(len(y_true)) if y_true[i] > 0]
+
+    num = len(y_pred)
+    sums = 0
+
+    for i in range(num):
+        tmp = abs(y[i] - y_pred[i]) / y[i]
+        sums += tmp
+
+    mape = sums * (100 / num)
+
+    return mape
