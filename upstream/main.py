@@ -38,3 +38,23 @@ def MAPE(y_true, y_pred):
     mape = sums * (100 / num)
 
     return mape
+
+
+def eva_regress(y_true, y_pred):
+    """Evaluation
+    evaluate the predicted resul.
+
+    # Arguments
+        y_true: List/ndarray, ture data.
+        y_pred: List/ndarray, predicted data.
+    """
+
+    mape = MAPE(y_true, y_pred)
+    vs = metrics.explained_variance_score(y_true, y_pred)
+    mae = metrics.mean_absolute_error(y_true, y_pred)
+    mse = metrics.mean_squared_error(y_true, y_pred)
+    r2 = metrics.r2_score(y_true, y_pred)
+    print('explained_variance_score:%f' % vs)
+    print('mape:%f%%' % mape)
+    print('mae:%f' % mae)
+    print('mse:%f' % mse)
