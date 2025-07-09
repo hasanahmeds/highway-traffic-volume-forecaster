@@ -78,3 +78,23 @@ def plot_results(y_true, y_preds, names):
     ax = fig.add_subplot(111)
 
     ax.plot(x, y_true, label='True Data')
+    for name, y_pred in zip(names, y_preds):
+        ax.plot(x, y_pred, label=name)
+
+    plt.legend()
+    plt.grid(True)
+    plt.xlabel('Time of Day')
+    plt.ylabel('Flow')
+
+    date_format = mpl.dates.DateFormatter("%H:%M")
+    ax.xaxis.set_major_formatter(date_format)
+    fig.autofmt_xdate()
+
+    plt.show()
+
+
+def main():
+    lstm = load_model('model/lstm.h5')
+    gru = load_model('model/gru.h5')
+    saes = load_model('model/saes.h5')
+    models = [lstm, gru, saes]
