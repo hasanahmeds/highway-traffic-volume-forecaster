@@ -118,3 +118,10 @@ def main():
         predicted = scaler.inverse_transform(predicted.reshape(-1, 1)).reshape(1, -1)[0]
         y_preds.append(predicted[:288])
         print(name)
+        eva_regress(y_test, predicted)
+
+    plot_results(y_test[: 288], y_preds, names)
+
+
+if __name__ == '__main__':
+    main()
