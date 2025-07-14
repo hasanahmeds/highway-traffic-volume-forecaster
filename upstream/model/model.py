@@ -58,3 +58,23 @@ def _get_sae(inputs, hidden, output):
 
     model = Sequential()
     model.add(Dense(hidden, input_dim=inputs, name='hidden'))
+    model.add(Activation('sigmoid'))
+    model.add(Dropout(0.2))
+    model.add(Dense(output, activation='sigmoid'))
+
+    return model
+
+
+def get_saes(layers):
+    """SAEs(Stacked Auto-Encoders)
+    Build SAEs Model.
+
+    # Arguments
+        layers: List(int), number of input, output and hidden units.
+    # Returns
+        models: List(Model), List of SAE and SAEs.
+    """
+    sae1 = _get_sae(layers[0], layers[1], layers[-1])
+    sae2 = _get_sae(layers[1], layers[2], layers[-1])
+    sae3 = _get_sae(layers[2], layers[3], layers[-1])
+
