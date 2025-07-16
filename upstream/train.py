@@ -38,3 +38,23 @@ def train_model(model, X_train, y_train, name, config):
     df.to_csv('model/' + name + ' loss.csv', encoding='utf-8', index=False)
 
 
+def train_seas(models, X_train, y_train, name, config):
+    """train
+    train the SAEs model.
+
+    # Arguments
+        models: List, list of SAE model.
+        X_train: ndarray(number, lags), Input data for train.
+        y_train: ndarray(number, ), result data for train.
+        name: String, name of model.
+        config: Dict, parameter for train.
+    """
+
+    temp = X_train
+    # early = EarlyStopping(monitor='val_loss', patience=30, verbose=0, mode='auto')
+
+    for i in range(len(models) - 1):
+        if i > 0:
+            p = models[i - 1]
+            hidden_layer_model = Model(input=p.input,
+                                       output=p.get_layer('hidden').output)
