@@ -58,3 +58,23 @@ def train_seas(models, X_train, y_train, name, config):
             p = models[i - 1]
             hidden_layer_model = Model(input=p.input,
                                        output=p.get_layer('hidden').output)
+            temp = hidden_layer_model.predict(temp)
+
+        m = models[i]
+        m.compile(loss="mse", optimizer="rmsprop", metrics=['mape'])
+
+        m.fit(temp, y_train, batch_size=config["batch"],
+              epochs=config["epochs"],
+              validation_split=0.05)
+
+        models[i] = m
+
+    saes = models[-1]
+    for i in range(len(models) - 1):
+        weights = models[i].get_layer('hidden').get_weights()
+        saes.get_layer('hidden%d' % (i + 1)).set_weights(weights)
+
+    train_model(saes, X_train, y_train, name, config)
+
+
+def main(argv):
