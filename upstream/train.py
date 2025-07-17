@@ -78,3 +78,23 @@ def train_seas(models, X_train, y_train, name, config):
 
 
 def main(argv):
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--model",
+        default="lstm",
+        help="Model to train.")
+    args = parser.parse_args()
+
+    lag = 12
+    config = {"batch": 256, "epochs": 600}
+    file1 = 'data/train.csv'
+    file2 = 'data/test.csv'
+    X_train, y_train, _, _, _ = process_data(file1, file2, lag)
+
+    if args.model == 'lstm':
+        X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
+        m = model.get_lstm([12, 64, 64, 1])
+        train_model(m, X_train, y_train, args.model, config)
+    if args.model == 'gru':
+        X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
+        m = model.get_gru([12, 64, 64, 1])
