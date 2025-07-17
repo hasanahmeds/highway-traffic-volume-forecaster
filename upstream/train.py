@@ -98,3 +98,12 @@ def main(argv):
     if args.model == 'gru':
         X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
         m = model.get_gru([12, 64, 64, 1])
+        train_model(m, X_train, y_train, args.model, config)
+    if args.model == 'saes':
+        X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1]))
+        m = model.get_saes([12, 400, 400, 400, 1])
+        train_seas(m, X_train, y_train, args.model, config)
+
+
+if __name__ == '__main__':
+    main(sys.argv)
